@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: "top#index"
   get 'top/index'
   get 'top/show'
+  resources :relationships, only: [:create, :destroy]
 end
