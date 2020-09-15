@@ -1,8 +1,9 @@
 <h1>ユーザ一覧</h1>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %></td> 
-    <td><%= user.username %></td> 
-  </tr>
+  <ul>
+    <li>ユーザID：<%= user.id %></li> 
+    <li>ユーザ名：<%= user.username %></li>
+    <li><%= render 'relationships/follow_button', user: user %></li>
+  </ul>
 <% end %>
