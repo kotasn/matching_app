@@ -1,3 +1,32 @@
-<h2>こんにちは、<%= current_user.username %>さん</h2>
+<h3>こんにちは、<%= current_user.username %>さん</h3>
 <%= render 'user/menu' %>
 
+<div class="row">
+  <div class="col s4">
+    <div class="card horizontal">
+      <div class="card-image">
+        <%= image_tag 'sample-1.jpg'%>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <label for="icon_prefix">ニックネーム</label>
+          <p><%= current_user.username%></p>
+          <label for="icon_prefix">登録アドレス</label>
+          <p><%= current_user.email%></p>
+          <br>
+          <label for="icon_prefix">フォロー数</label>
+          <p><%= current_user.followings.count %></p>
+          <label for="icon_prefix">フォワー数</label>
+          <p><%= current_user.followers.count %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+  <div class="col s8">
+    <div class="green darken-2">
+      <p><%= current_user.username%></p>
+      <p><%= current_user.email%></p>
+    </div>
+  </div>
+</div>
