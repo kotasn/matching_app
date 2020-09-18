@@ -2,7 +2,7 @@
 <%= render 'user/menu' %>
 
 <div class="row">
-  <div class="col s4">
+  <div class="col s5">
     <div class="card horizontal">
       <div class="card-image">
         <%= image_tag 'sample-1.jpg'%>
@@ -23,10 +23,33 @@
     </div>
   </div>
             
-  <div class="col s8">
-    <div class="green darken-2">
-      <p><%= current_user.username%></p>
-      <p><%= current_user.email%></p>
+  <div class="col s3">
+    <div class="card-panel green lighten-2">
+      <div class="chip">
+        <%= current_user.created_at %>
+      </div>
+      <div class="chip">
+        <%= current_user.created_at %>
+      </div>
     </div>
+  </div>
+  <div class="col s3">
+    <div class="card-panel green lighten-2">
+      <div class="chip">
+        <%= current_user.created_at %>
+      </div>
+      <div class="chip">
+        <%= current_user.created_at %>
+      </div>
+    </div>
+  </div>
+  <div class="col s6">
+    <div class="card-panel blue-grey lighten-5">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+        </div>
+      </div>
   </div>
 </div>

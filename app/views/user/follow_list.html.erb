@@ -4,7 +4,7 @@
   <P>フォロー中</P>
   <% @follow_list.each do |user| %>
     <div class="col s3">
-      <div class="card">
+      <div class="card  hoverable">
         <div class="card-image">
           <%= image_tag 'sample-1.jpg' %>
         </div>
@@ -23,7 +23,7 @@
   <P>フォローされている人</P>
   <% @followers_list.each do |user| %>
     <div class="col s3">
-      <div class="card">
+      <div class="card  hoverable">
         <div class="card-image">
           <%= image_tag 'sample-1.jpg' %>
         </div>
@@ -42,7 +42,7 @@
   <P>マッチした人</P>
   <% @match_list.each do |user| %>
     <div class="col s3">
-      <div class="card">
+      <div class="card  hoverable">
         <div class="card-image">
           <%= image_tag 'sample-1.jpg' %>
         </div>
