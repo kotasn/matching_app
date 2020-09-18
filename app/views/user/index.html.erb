@@ -1,11 +1,24 @@
-<h1>ユーザ一覧</h1>
-<%= flash[:success] %>
-<%= flash[:alert] %>
-<% @users.each do |user| %>
-  <ul>
-    <li>ユーザID：<%= user.id %></li> 
-    <li>ユーザ名：<%= user.username %></li>
-    <li>ユーザ名：<%= user.email %></li>
-    <li><%= render 'relationships/follow_button', user: user %></li>
-  </ul>
-<% end %>
+<div class="row">
+  <h2>ユーザ一覧</h2>
+  <%= render 'user/menu' %>
+  <%= flash[:success] %>
+  <%= flash[:alert] %>
+  <% @users.each do |user| %>
+    <% unless user.id == current_user.id%>
+      <div class="col s3">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'sample-1.jpg' %>
+          </div>
+          <div class="card-content" >
+              <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
+              <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
+          </div>
+          <div class="card-action">
+            <%= render 'relationships/follow_button', user: user %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %> 
+</div>

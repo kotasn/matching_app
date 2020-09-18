@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeviseRails6</title>
+    <title>PlayGround</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,14 +12,19 @@
   <body>
     <header>
       <nav>
-          <% if user_signed_in? %>
-            <strong><%= link_to current_user.username, top_show_path %></strong>
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to 'サインアップ', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
-          <% end %>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><i class="material-icons">cloud</i>PlayGroundAPP</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><strong><%= link_to current_user.username, user_show_path %></strong></li>
+              <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
       </nav>
     </header>
     <!-- ここに追加 -->
