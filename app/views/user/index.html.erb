@@ -1,5 +1,6 @@
 <h1>ユーザ一覧</h1>
-
+<%= flash[:success] %>
+<%= flash[:alert] %>
 <% @users.each do |user| %>
   <ul>
     <li>ユーザID：<%= user.id %></li> 
