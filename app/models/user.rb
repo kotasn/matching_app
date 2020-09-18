@@ -18,9 +18,9 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # メール送信した場合は「:confirmable」を追加する
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable, :omniauthable, omniauth_providers:[:twitter]
+         :recoverable, :rememberable, :validatable, :lockable, :timeoutable, :trackable, :omniauthable, omniauth_providers:[:twitter]
 
   def follow(other_user)
     unless self == other_user
@@ -35,5 +35,28 @@ class User < ApplicationRecord
 
   def following?(other_user)
     self.followings.include?(other_user)
+  end
+
+  def get_follow_list
+    self.followings
+  end
+
+  def get_followers_list
+    self.followers
+  end
+
+  def matching
+    target_list = []
+    list = []
+    targets = self.relationships.pluck(:follow_id)
+    targets.each do |u|
+        if match = Relationship.find_by(user_id: u, follow_id: self.id)
+        target_list << match.user_id
+      end
+    end
+    target_list.each do |u|
+      list << User.find(u)
+    end
+    list
   end
 end
