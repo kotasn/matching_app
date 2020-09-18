@@ -16,7 +16,7 @@
           <a href="/" class="brand-logo"><i class="material-icons">cloud</i>PlayGroundAPP</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if user_signed_in? %>
-              <li><strong><%= link_to current_user.username, user_show_path %></strong></li>
+              <li><%= link_to current_user.username, user_show_path %></li>
               <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
@@ -30,7 +30,6 @@
     <!-- ここに追加 -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>

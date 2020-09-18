@@ -1,8 +1,15 @@
+<h2>ユーザ一覧</h2>
+<%= render 'user/menu' %>
+<% if flash.any? %>
+  <script type="text/javascript">
+    <% flash.each do |key, value| %>
+      <% key = "success" if key == "success" %>
+      <% key = "warning" if key == "warn" %>
+      toastr['<%= key %>']('<%= value %>');
+    <% end %>
+  </script>
+<% end %>
 <div class="row">
-  <h2>ユーザ一覧</h2>
-  <%= render 'user/menu' %>
-  <%= flash[:success] %>
-  <%= flash[:alert] %>
   <% @users.each do |user| %>
     <% unless user.id == current_user.id%>
       <div class="col s3">
