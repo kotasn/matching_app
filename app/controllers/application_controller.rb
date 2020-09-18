@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # ログイン後の遷移先設定
   def after_sign_in_path_for(resource)
-    top_show_path
+    user_show_path
   end
 
   private
