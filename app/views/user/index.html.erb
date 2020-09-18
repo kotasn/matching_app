@@ -9,10 +9,10 @@
     <% end %>
   </script>
 <% end %>
-<div class="row">
+<div class="row container">
   <% @users.each do |user| %>
     <% unless user.id == current_user.id%>
-      <div class="col s3">
+      <div class="col s4">
         <div class="card  hoverable">
           <div class="card-image">
             <%= image_tag 'sample-1.jpg' %>

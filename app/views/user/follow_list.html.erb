@@ -1,59 +1,67 @@
 <h3>マッチング一覧</h3>
 <%= render 'user/menu' %>
-<div class="row">
-  <P>フォロー中</P>
-  <% @follow_list.each do |user| %>
-    <div class="col s3">
-      <div class="card  hoverable">
-        <div class="card-image">
-          <%= image_tag 'sample-1.jpg' %>
-        </div>
-        <div class="card-content" >
-            <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
-            <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
-        </div>
-        <div class="card-action">
-          <%= render 'relationships/follow_button', user: user %>
+<div class="container green lighten-2 z-depth-4">
+  <div class="row">
+    <blockquote>フォロー中</blockquote>
+    <% @follow_list.each do |user| %>
+      <div class="col s3">
+        <div class="card  hoverable">
+          <div class="card-image">
+            <%= image_tag 'sample-1.jpg' %>
+          </div>
+          <div class="card-content" >
+              <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
+              <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
+          </div>
+          <div class="card-action">
+            <%= render 'relationships/follow_button', user: user %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %> 
+    <% end %> 
+  </div>
 </div>
-<div class="row">
-  <P>フォローされている人</P>
-  <% @followers_list.each do |user| %>
-    <div class="col s3">
-      <div class="card  hoverable">
-        <div class="card-image">
-          <%= image_tag 'sample-1.jpg' %>
-        </div>
-        <div class="card-content" >
-            <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
-            <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
-        </div>
-        <div class="card-action">
-          <%= render 'relationships/follow_button', user: user %>
+<br>
+<div class="container blue-grey lighten-5 z-depth-4">
+  <div class="row">
+    <blockquote>フォローされている人</blockquote>
+    <% @followers_list.each do |user| %>
+      <div class="col s3">
+        <div class="card  hoverable">
+          <div class="card-image">
+            <%= image_tag 'sample-1.jpg' %>
+          </div>
+          <div class="card-content" >
+              <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
+              <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
+          </div>
+          <div class="card-action">
+            <%= render 'relationships/follow_button', user: user %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %> 
+    <% end %> 
+  </div>
 </div>
-<div class="row">
-  <P>マッチした人</P>
-  <% @match_list.each do |user| %>
-    <div class="col s3">
-      <div class="card  hoverable">
-        <div class="card-image">
-          <%= image_tag 'sample-1.jpg' %>
-        </div>
-        <div class="card-content" >
-            <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
-            <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
-        </div>
-        <div class="card-action">
-          <%= render 'relationships/follow_button', user: user %>
+<br>
+<div class="container green lighten-2 z-depth-4">
+  <div class="row">
+    <blockquote>マッチした人</blockquote>
+    <% @match_list.each do |user| %>
+      <div class="col s3">
+        <div class="card  hoverable">
+          <div class="card-image">
+            <%= image_tag 'sample-1.jpg' %>
+          </div>
+          <div class="card-content" >
+              <p><i class="material-icons">sentiment_very_satisfied</i>&nbsp;<%= user.username %></p>
+              <p><i class="material-icons">email</i>&nbsp;<%= user.email %></p>
+          </div>
+          <div class="card-action">
+            <%= render 'relationships/follow_button', user: user %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %> 
+    <% end %> 
+  </div>
 </div>
