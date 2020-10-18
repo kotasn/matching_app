@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-  def index
+# userに関するコントローラはここに記載
+ def index
     @users = User.all
   end
 
