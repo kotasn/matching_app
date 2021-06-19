@@ -8,5 +8,6 @@ class TopController < ApplicationController
 
 # def test
 #  hogehoge
+#  fugafugafuga
 # end
 end
