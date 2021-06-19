@@ -5,4 +5,8 @@ class TopController < ApplicationController
 
   def show
   end
+
+# def test
+#  hogehoge
+# end
 end
