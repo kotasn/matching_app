@@ -13,4 +13,11 @@ class UserController < ApplicationController
     @match_list = current_user.matching
   end
 
+  # def test_code
+  #   処理・・・・
+  #   処理・・・・
+  #   処理・・・・
+  #   処理・・・・
+  # end
+
 end
